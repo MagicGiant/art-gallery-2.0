@@ -1,0 +1,16 @@
+.my_footer{
+    background-color: #eeeeee;
+    display: flex;
+    
+    padding:0 10px;
+    margin-top: 10px;
+
+    justify-content: space-between;
+    writing-mode: horizontal-tb;
+    align-items: center;
+}
+
+.right_footer{
+    display: flex;
+    gap: 20px;
+}

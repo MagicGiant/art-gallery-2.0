@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арт галерея</title>
+    <%- include('./partials/stiles.ejs') %>
+    <script src="js/timePageLoader.js"></script>
+</head>
+
+<body class="my_body">
+  <%- include('./partials/header.ejs') %>
+
+  <main class="my_main">
+    <div class="main__images" id="image">
+      <% for(const albumId in albums){ %>
+        <div class="main__album" id="album">
+          <hr class="grad_line" id="grad_line">
+          <span class="main__album-name" id="album-name"">Альбом:<%=albumId%></span>
+          <hr class="grad_line" id="grad_line">
+        </div>
+        <div class="main__examples">
+          <% for(const image of albums[albumId]){ %>
+            <div class="main__examples-example">
+              <img class="main__examples-example-img" src="<%=image.url%>" alt="example">
+            </div>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+      <!-- <div class="main__sorting">
+          <span class="main__sorting-label">Сортировать по:</span>
+          <select class="main__sorting-select">
+          <option value="likes">Количество лайков</option>
+          <option value="subscriptions">Подписки</option>
+          <option value="views">Просмотры</option>
+          </select>
+      </div> -->
+
+      <!-- <div class="main__album" id="album">
+        <hr class="grad_line" id="grad_line">
+        <span class="main__album-name" id="album-name"">Альбом</span>
+        <hr class="grad_line" id="grad_line">
+      </div>
+    
+      <div class="main__examples">
+        <div class="main__examples-example">
+          <img class="main__examples-example-img" src="images/authors/Avogado6/example1.jpg" alt="example1">
+        </div>
+        -->
+  </main>
+
+
+  <%- include('./partials/footer.ejs') %>
+
+  <!-- <script src="js/index.js"></script> -->
+  <!-- <script src="js/nav.js"></script> -->
+  <script src="js/voice_control.js"></script>
+</body> 

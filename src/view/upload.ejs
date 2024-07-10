@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>load image</title>
+  <%- include('./partials/stiles.ejs') %>
+  <link rel="stylesheet" href="styles/upload.css">
+</head>
+<body>
+  <%- include('./partials/header.ejs') %>
+
+  <main>
+    <div class="upload-form">
+      <div class="drop-area" id="drop-area_img">
+        <h3>Перетащите файлы сюда</h3>
+        <input type="file" id="fileElem" multiple style="display:none">
+        <label class="select-label" for="fileElem">Выберите файлы</label>
+      </div>
+    </div>
+  </main>
+  
+  <script src="js/upload.js"></script>
+</body>
+</html>

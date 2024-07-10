@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles/authorization.css">
+  <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body class="my_body">
+  <main class="auth-main">
+    <div class="auth-box">
+      <form method="post"  class="auth-form" action="/auth/login">
+        <div class="input-box">
+          <input class="text-input" name="name" type="text" placeholder="Ваше имя">
+          <input class="text-input" name="password" type="password" placeholder="Пароль">
+        </div>
+        <button class="confirm-btn">Подтвердить</button>
+      </form>
+    </div>
+  </main>
+
+  <%- include('./partials/message.ejs') %>
+</body>
+</html>

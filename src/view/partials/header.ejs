@@ -1,0 +1,46 @@
+<header class="my_header">
+  <div class="header__top">
+    <a href="index.html" class="header__logo">
+      <span class="header__logo-text">АртГалерея</span>
+    </a>
+    <div class="header__search">
+      <input type="text" placeholder="Поиск" class="header__search-input" id="find_img-inp">
+      <button class="btn" id="find_img-btn">Поиск</button>
+    </div>
+    <div class="header__profile">
+      <div class="auth-btn_box">
+        <% if (isLogin === false){ %>
+          <a class="auth-btn" href="/auth/login">Войти</a>
+          <a class="auth-btn" href="/auth/sign-up">Регистрация</a>
+        <% } else{ %>
+          <form action="/auth/out" method="post">
+            <button class="btn">Выйти</button>
+          </form>
+        <% } %>
+      </div>
+      <!-- <img src="images/ava.jpg" alt="Аватар" class="header__profile-avatar"> -->
+    </div>
+  </div>
+
+  <nav class="header__nav">
+    <a href="/gallery" class="header__nav-item" id="gallery" onshow="makeCurrentNavToBold(this)">
+        <span class="header__nav-item-text">Главная</span></a>
+    <div class="header__nav-space"></div>
+    <% if (isLogin){ %>
+      <a href="/reviews" class="header__nav-item" id="reviews">
+        <span class="header__nav-item-text">Отзывы</span></a>
+      
+      <% if (isAdmin){ %>
+      <a href="/upload" class="header__nav-item" id="upload">
+        <span class="header__nav-item-text">Загрузить</span></a>
+      <% } %>
+    <% } %>
+  </nav>
+
+  <script src="/js/header.js"></script>
+  <% if (typeof route !== 'undefined' && route !== null) {%>
+    <script>
+      makeCurrentNavToBold('<%=route%>');
+    </script>
+  <% } %>
+</header>

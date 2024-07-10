@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Арт галерея</title>
+    <%- include('./partials/stiles.ejs') %>
+
+    <script src="js/timePageLoader.js"></script>
+</head>
+
+<body class="my_body">
+  <%- include('./partials/header.ejs') %>
+    <main class="my_main">
+      <div class="form_layout">
+        <form class="revies-form">
+
+            <div class="label-conteiner">
+            <label class="revies-form-label" for="name">Имя:</label>
+            <input class="revies-form-input" type="text" id="name">
+            </div>
+
+            <div class="label-conteiner">
+            <label class="revies-form-label" for="rating">Оценка:</label>
+
+            <select class="revies-form-input" id="rating" name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+          </div>
+
+          <div class="label-conteiner">
+            <label class="revies-form-label" for="revies-text">Отзыв:</label>
+            <input class="revies-form-input" type="text" id="revies-text">
+          </div>
+
+          <div class="label-conteiner">
+            <button class="revies-form-bottom" onclick="populateTableFromLocalStorage()" type="submit">Подтвердить</button>
+          </div>
+        </form>
+      </div>
+
+      <table class="reviews-table" id="reviews-table">
+        <thead class="reviews-table-thread">
+            <tr class="reviews-table-tr">
+                <th class="reviews-table-th__name">Имя</th>
+                <th class="reviews-table-th__grade">Оценка</th>
+                <th class="reviews-table-th__review">Отзыв</th>
+            </tr>
+        </thead>
+        <tbody class="reviews-table__lines" id="reviews-table__lines">
+        </tbody>
+      </table>
+
+    </main>    
+    
+    <%- include('./partials/footer.ejs') %>
+
+    
+    <script src="js/nav.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/voice_control.js"></script>
+</body>
